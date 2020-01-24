@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_map"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_subjects"
+            android:icon="@drawable/ic_menu_subjects"
+            android:title="@string/subjects" />
+        <item
+            android:id="@+id/nav_calendar"
+            android:icon="@drawable/ic_menu_calendar"
+            android:title="@string/calendar" />
+        <item
+            android:id="@+id/nav_contacts"
+            android:icon="@drawable/ic_menu_contacts"
+            android:title="@string/menu_contacts" />
+
+    </group>
+
+    <item android:title="@string/lodz">
+        <menu>
+            <item
+                android:id="@+id/nav_things2do"
+                android:icon="@drawable/ic_menu_things2do"
+                android:title="@string/menu_things2do" />
+            <item
+                android:id="@+id/nav_transports"
+                android:icon="@drawable/ic_menu_transports"
+                android:title="@string/menu_transports" />
+        </menu>
+    </item>
+
+</menu>

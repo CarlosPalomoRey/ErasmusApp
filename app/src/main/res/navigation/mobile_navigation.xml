@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.myapplication.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <activity
+        android:id="@+id/nav_subjects"
+        android:name="com.example.myapplication.SubjectsSearchActivity"
+        android:label="@string/menu_subjects"
+        tools:layout="@layout/activity_subjects_search" />
+
+    <fragment
+        android:id="@+id/nav_calendar"
+        android:name="com.example.myapplication.ui.calendar.CalendarFragment"
+        android:label="@string/menu_calendar"
+        tools:layout="@layout/fragment_calendar" />
+
+    <fragment
+        android:id="@+id/nav_contacts"
+        android:name="com.example.myapplication.ui.contacts.ContactsFragment"
+        android:label="@string/menu_contacts"
+        tools:layout="@layout/fragment_contacts" />
+
+    <fragment
+        android:id="@+id/nav_things2do"
+        android:name="com.example.myapplication.ui.things2do.Things2doFragment"
+        android:label="@string/menu_things2do"
+        tools:layout="@layout/fragment_things2do" />
+
+    <fragment
+        android:id="@+id/nav_transports"
+        android:name="com.example.myapplication.ui.transports.TransportsFragment"
+        android:label="@string/menu_transports"
+        tools:layout="@layout/fragment_transports" />
+</navigation>
