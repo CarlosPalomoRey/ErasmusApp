@@ -61,23 +61,22 @@ public class RegisterActivity extends AppCompatActivity {
                 String regex0 = "^[0-3]?[0-9]/[0-3]?[0-9]/(?:[0-9]{2})?[0-9]{2}$";
 
                 Pattern patternBirthdate = Pattern.compile(regex0);
-                Matcher matcherBirthdate=patternBirthdate.matcher(birthdate);
+
                 //Check correct registration
                 //Email check
-                String regex1 = "^[_A-Za-z0-9-\\\\+]+(\\\\.[_A-Za-z0-9-]+)*\n" +
-                        "      @[A-Za-z0-9-]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})$";
+                String regex1 = "(.+)@(.+)$";
 
                 Pattern patternEmail = Pattern.compile(regex1);
 
 
-                Matcher matherEmail=patternEmail.matcher(email);
+
                 //Password check
                 String regex2 =  "((?=.*[a-z])(?=.*\\d)(?=.*[A-Z])(?=.*[@#$%!]).{8,40})";
 
                 Pattern patternPassword=Pattern.compile(regex2);
 
 
-                Matcher matherPassword=patternPassword.matcher(password);
+
 
 
                 if(TextUtils.isEmpty(email)){
@@ -91,20 +90,20 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                if(matherEmail.find()) {
+                if(!(patternEmail.matcher(email).matches())) {
                     Toast.makeText(RegisterActivity.this, "Try email again",
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if(matherPassword.find()) {
-                    Toast.makeText(RegisterActivity.this, "Try password again",
+                if(!(patternPassword.matcher(password).matches())) {
+                    Toast.makeText(RegisterActivity.this, "Try with a harder password again. Use one of this symbols: @#$%!",
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if(matcherBirthdate.find()) {
-                    Toast.makeText(RegisterActivity.this, "Incorrect date of birth",
+                if(!(patternBirthdate.matcher(birthdate).matches())) {
+                    Toast.makeText(RegisterActivity.this, "Incorrect date of birth; Use / as separator",
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
